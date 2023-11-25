@@ -93,7 +93,7 @@ export default {
     async usersLoad() {
       try {
         const response = await axios.get(
-          'http://localhost:8000/api/v1/users/getAll',
+          'https://crud-task-deploy.onrender.com/api/v1/users/getAll',
         )
         this.result = response.data.data
       } catch (error) {
@@ -112,7 +112,7 @@ export default {
     async saveData() {
       try {
         await axios.post(
-          'http://localhost:8000/api/v1/users/uploadUserData',
+          'https://crud-task-deploy.onrender.com/api/v1/users/uploadUserData',
           this.user,
         )
         alert('Data saved')
@@ -128,7 +128,7 @@ export default {
 
     async updateData() {
       try {
-        const updateDate = `http://localhost:8000/api/v1/users/updateUser/${this.user._id}`
+        const updateDate = `https://crud-task-deploy.onrender.com/api/v1/users/updateUser/${this.user._id}`
         await axios.patch(updateDate, this.user)
         this.user = { _id: '', name: '', country: '', phone: '' }
         alert('Updated')
@@ -140,7 +140,7 @@ export default {
 
     async remove(user) {
       try {
-        const url = `http://localhost:8000/api/v1/users/deleteUser/${user._id}`
+        const url = `https://crud-task-deploy.onrender.com/api/v1/users/deleteUser/${user._id}`
         await axios.delete(url)
         alert('Deleted')
         await this.usersLoad()
