@@ -15,6 +15,6 @@ connectDB()
 async function connectDB() {
   await connectApp(process.env.MONGO_URL)
   app.listen(process.env.PORT, () => {
-    console.log('app is running on port 8000...')
+    console.log('app is running on port 8000..')
   })
 }
